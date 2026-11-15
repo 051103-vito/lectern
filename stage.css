@@ -1,0 +1,16 @@
+.stage { position: relative; overflow: hidden; background: #000; }
+.canvas { position: absolute; width: 1920px; height: 1080px; transform-origin: 0 0; box-sizing: border-box; overflow: hidden; font-family: "Inter", "Segoe UI", sans-serif; color: #fff; background: #000; }
+.canvas .bg { position: absolute; inset: 0; }
+.canvas .bg video, .canvas .bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.canvas .fg { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; gap: 36px; padding: 110px 170px; text-align: center; box-sizing: border-box; }
+.canvas .ref { font-weight: 600; font-size: 54px; }
+.canvas .txt { line-height: 1.25; white-space: pre-line; text-wrap: balance; }
+.canvas .media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }
+.canvas .count { font-size: 300px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; line-height: 1; }
+.canvas .clabel { font-size: 64px; font-weight: 500; opacity: .9; }
+.canvas .logo { font-size: 60px; font-weight: 500; color: #9bb8e6; }
+.canvas .alert { position: absolute; left: 0; right: 0; padding: 34px 120px; background: rgba(0,0,0,.82); font-size: 58px; font-weight: 600; text-align: center; border-top: 4px solid #f5c542; border-bottom: 4px solid #f5c542; }
+.canvas .alert.bottom { bottom: 0; } .canvas .alert.top { top: 0; }
+.canvas .bars { position: absolute; inset: 0; display: flex; }
+.canvas .bars i { flex: 1; }
+.canvas .tp { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 72px; font-weight: 700; text-shadow: 0 2px 12px #000; }

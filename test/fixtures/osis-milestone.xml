@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osis xmlns="http://www.bibletechnologies.net/2003/OSIS/namespace">
+  <osisText osisIDWork="TMS" xml:lang="en"><header><work osisWork="TMS"><title>Test OSIS Milestone</title></work></header>
+    <div type="book" osisID="Ps"><chapter osisID="Ps.23">
+      <p><verse sID="Ps.23.1" osisID="Ps.23.1"/>The LORD is my shepherd; <i>I shall not want</i>.<verse eID="Ps.23.1"/>
+      <verse sID="Ps.23.2" osisID="Ps.23.2"/>He maketh me to lie down in green pastures.<verse eID="Ps.23.2"/></p>
+    </chapter></div>
+  </osisText>
+</osis>

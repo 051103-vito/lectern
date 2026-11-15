@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usfx>
+  <languageCode>eng</languageCode>
+  <book id="FRT"><h>Preface</h><p>This preface is not Bible text.</p></book>
+  <book id="JHN"><id id="JHN">John</id><h>John</h><toc level="1">The Gospel of John</toc>
+    <c id="3"/><p><v id="16" bcv="JHN.3.16"/>For God so loved the world, <f caller="+">a footnote to skip</f>that he gave<ve/></p>
+    <p><v id="17" bcv="JHN.3.17"/>For God did not send <add>his</add> Son.<ve/></p>
+    <p><v id="18-19"/>These two verses share a line.<ve/></p>
+  </book>
+  <book id="PSA"><c id="23"/><d>A Psalm by David (skipped)</d><p><v id="1"/>Yahweh is my shepherd.<ve/></p></book>
+</usfx>

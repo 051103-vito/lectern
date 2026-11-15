@@ -1,0 +1,26 @@
+Third-party material used in this program
+
+BIBLE TEXTS (data/)
+- King James Version (KJV). Public domain in most countries. In the United Kingdom the printing of the KJV
+  is subject to a Crown letters patent, so check local rules before printing it there. On-screen use is not printing.
+  Source of the text file: https://github.com/thiagobodruk/bible
+- American Standard Version (ASV, 1901). Public domain.
+  Source of the text file: https://github.com/scrollmapper/bible_databases
+- World English Bible (WEB). Public domain.
+  Source of the text file: https://ebible.org (USFX download, via https://github.com/seven1m/open-bibles)
+Other Bible versions are added by each user from their own files. Only add versions you have the right to use.
+
+FONT (fonts/)
+- Inter. Copyright The Inter Project Authors (https://github.com/rsms/inter). SIL Open Font License 1.1.
+  The licence text is in fonts/Inter-LICENSE.txt.
+
+WORD MEANINGS (lang/)
+- WordNet 3.0, Copyright 2006 Princeton University. Used to find words with a similar meaning when searching.
+  The licence text is in lang/WORDNET-LICENSE.txt.
+
+SOFTWARE LIBRARIES
+- Electron (MIT), electron-updater (MIT), electron-builder (MIT, build tool), jsdom (MIT, tests only).
+
+SONGS
+- This program contains no copyrighted song lyrics. The sample hymns in samples/ are public domain.
+  Churches are responsible for the licences (for example CCLI) for the songs they import.

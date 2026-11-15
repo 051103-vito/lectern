@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Lectern</title>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="stage.css"><link rel="stylesheet" href="control.css">
+</head><body>
+<div class="app" id="app">
+  <div id="banner" class="banner" hidden></div>
+  <div id="restore" class="banner restore" hidden></div>
+  <div class="top">
+    <div class="logo"><i></i><span id="appName">Lectern</span></div>
+    <div class="nav" id="nav"><button data-tab="songs">Songs</button><button data-tab="media">Media</button><button data-tab="bible" class="on">Bible</button><button data-tab="ann">Announce</button></div>
+    <span class="sp"></span>
+    <div class="seg" id="modeSeg" title="Direct: Enter and the verse arrows go live at once. Studio: preview first, then take."><button id="mStudio">Studio</button><button id="mDirect" class="on">Direct</button></div>
+    <button id="btnTake" class="go">Take <kbd>Enter</kbd></button>
+    <span id="liveInd" class="liveind"><i></i><b>STANDBY</b></span>
+    <button id="btnBlack">Black <kbd>F2</kbd></button>
+    <button id="btnLayout">Layout <span aria-hidden="true">▾</span></button>
+    <button id="btnLock" class="ic" aria-label="Layout locked" title="Layout is locked. Click to unlock."></button>
+    <button id="btnThemes">Themes</button>
+    <button id="btnSettings">Settings</button>
+  </div>
+  <div class="grid" id="grid">
+    <div class="col" id="colL">
+      <div class="pn" id="pnLib">
+        <div class="tabs" id="libTabs"><span data-tab="songs">Songs</span><span data-tab="media">Media</span><span data-tab="bible" class="on">Bible</span><span data-tab="ann">Announce</span></div>
+
+        <section id="tab-bible" class="tab">
+          <div class="hd"><div class="box"><input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="Type a book: gen, exo, 1jo"><span id="hint"></span></div>
+            <div class="box sbox"><input id="s" type="text" autocomplete="off" spellcheck="false" placeholder="Search by words or meaning"><span id="sinfo"></span></div></div>
+          <div class="row2"><div id="steps" class="steps"><span>Book</span><span>Chapter</span><span>Verse</span></div><div id="recent" class="recent" hidden></div></div>
+          <div id="sugg" class="sugg"></div>
+          <div id="vers" class="sugg" hidden></div>
+          <div id="list" class="list"></div>
+          <div id="res" class="list" hidden></div>
+          <div class="tool"><div id="verTabs" class="tabs vt"></div><span id="where" class="dim"></span><span class="sp"></span><button id="bibPrev" aria-label="Previous verse" title="Previous verse">‹</button><button id="bibNext" aria-label="Next verse" title="Next verse">›</button><button id="addQ" class="go"><span id="addT">Add to queue</span> <kbd>Ctrl+Enter</kbd></button></div>
+        </section>
+
+        <section id="tab-songs" class="tab" hidden>
+          <div class="hd"><div class="box sbox"><input id="songQ" type="text" autocomplete="off" spellcheck="false" placeholder="Search songs by title or words"><span id="songInfo"></span></div></div>
+          <div class="row-btns"><button id="songImport">Import .txt files</button><button id="songFolder">Import a folder</button><button id="songNew">New song</button></div>
+          <div id="songList" class="list"></div>
+          <div class="tool"><button id="songEdit">Edit</button><button id="songDel">Delete</button><span class="sp"></span><button id="songLive" class="go">Go live</button><button id="songAdd" class="go">Add to queue</button></div>
+        </section>
+
+        <section id="tab-media" class="tab" hidden>
+          <div class="row-btns"><button id="mediaImport">Import images and videos</button><button id="mediaCount">New countdown</button></div>
+          <div id="mediaGrid" class="mgrid"></div>
+          <div class="tool"><button id="mediaBg">Use as background</button><button id="mediaDel">Delete</button><span class="sp"></span><button id="mediaLive" class="go">Go live</button><button id="mediaAdd" class="go">Add to queue</button></div>
+        </section>
+
+        <section id="tab-ann" class="tab" hidden>
+          <div class="annbox"><label>Quick text (shows on screen straight away)</label>
+            <div class="box sbox"><input id="quickText" type="text" placeholder="Please move your car at the gate" autocomplete="off"></div>
+            <div class="row-btns"><button id="quickShow" class="go">Show now</button><button id="quickClear">Clear</button></div>
+            <label>Alert over whatever is on screen</label>
+            <div class="box sbox"><input id="alertText" type="text" placeholder="Nursery: parent of Ada, please come" autocomplete="off"></div>
+            <div class="row-btns"><select id="alertPos" aria-label="Alert position"><option value="bottom">Bottom</option><option value="top">Top</option></select><select id="alertSecs" aria-label="Alert time"><option value="10">10 seconds</option><option value="20">20 seconds</option><option value="0">Until I hide it</option></select><button id="alertSend" class="go">Send alert</button><button id="alertHide">Hide</button></div>
+            <label>Announcement slides</label></div>
+          <div id="annList" class="list"></div>
+          <div class="tool"><button id="annNew">New slide</button><button id="annEdit">Edit</button><button id="annDel">Delete</button><span class="sp"></span><button id="annLive" class="go">Go live</button><button id="annAdd" class="go">Add to queue</button></div>
+        </section>
+      </div>
+      <div class="split h" id="splitL" role="separator" aria-label="Resize panels"></div>
+      <div class="pn" id="pnLive">
+        <div class="tabs"><span class="on">Live slides</span><small id="liveTitle" class="dim"></small></div>
+        <div id="slides" class="slides"></div>
+        <div class="tool"><button id="slPrev">‹ Previous slide</button><button id="slNext">Next slide ›</button><span class="sp"></span><span class="dim" id="slInfo"></span></div>
+      </div>
+    </div>
+    <div class="split v" id="splitV" role="separator" aria-label="Resize panels"></div>
+    <div class="col" id="colR">
+      <div class="pn" id="pnOut">
+        <div class="tabs"><span class="on">Output</span></div>
+        <div class="mons">
+          <div class="pv"><label id="pvLabel">Selected (preview)</label><div id="prev" class="stage"><div class="canvas mode-clear"></div></div></div>
+          <div class="pg"><label>Live (on the output)</label><div id="prog" class="stage"><div class="canvas mode-black"></div></div></div>
+        </div>
+        <div class="ctl"><button id="btnLogo">Logo <kbd>F4</kbd></button><button id="btnBlack2">Black <kbd>F2</kbd></button><button id="btnClear">Clear <kbd>F3</kbd></button></div>
+      </div>
+      <div class="split h" id="splitR" role="separator" aria-label="Resize panels"></div>
+      <div class="pn" id="pnQueue">
+        <div class="tabs"><span class="on">Queue <b id="qn">0</b></span><span class="sp"></span><button id="btnServices" class="mini">Services</button></div>
+        <div id="qlist" class="qlist"></div>
+        <div class="tool"><button id="qPrev" title="Ctrl+Left">‹ Previous item</button><button id="qNext" title="Ctrl+Right">Next item ›</button><span class="sp"></span><button id="qClear">Clear</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span id="mode">Direct</span><span id="out">Output: checking...</span><span id="ver" class="dim"></span><span class="sp"></span><span class="dim">Right Arrow or Space: next part. Enter: go live. Esc: new reference.</span></div>
+</div>
+<div id="modalRoot"></div><div id="toast" class="toast" role="status"></div>
+<script src="bible.js"></script><script src="bible-import.js"></script><script src="search.js"></script><script src="songparse.js"></script><script src="sample-songs.js"></script><script src="render.js"></script>
+<script src="control.js"></script>
+<script src="ui-songs.js"></script><script src="ui-media.js"></script><script src="ui-announce.js"></script><script src="ui-themes.js"></script><script src="ui-layout.js"></script><script src="ui-services.js"></script><script src="ui-bibleimport.js"></script><script src="ui-settings.js"></script><script src="ui-boot.js"></script>
+</body></html>

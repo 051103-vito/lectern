@@ -1,0 +1,63 @@
+{
+  "name": "lectern",
+  "version": "1.0.1",
+  "description": "Free church presentation software",
+  "main": "main.js",
+  "author": "Lectern contributors",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node test/logic.test.js && node test/ui.test.js",
+    "dist": "electron-builder --win nsis --publish never",
+    "release": "electron-builder --win nsis --publish always"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "jsdom": "^25.0.0"
+  },
+  "build": {
+    "appId": "org.lectern.app",
+    "productName": "Lectern",
+    "artifactName": "Lectern-Setup-${version}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!test/**",
+      "!tools/**",
+      "!docs/**",
+      "!samples/**",
+      "!.github/**",
+      "!dist/**",
+      "!**/*.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "051103-vito",
+        "repo": "lectern"
+      }
+    ]
+  }
+}
